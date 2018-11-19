@@ -1,0 +1,36 @@
+#include "nchw_astar.as"
+//サンプルです。
+
+charmap = "　　" + {"
+　　壁壁壁壁壁壁壁壁
+壁　壁　　　壁　　壁
+壁　　　壁壁壁壁　壁
+壁壁壁　　壁壁　　壁
+壁　　　　　　　壁壁
+壁壁壁壁　壁　　　壁
+壁　　　　壁壁壁　壁
+壁　壁　壁壁壁壁　壁
+壁　壁　　　　　　　
+壁壁壁壁壁壁壁壁壁　
+"}
+dialog strlen(charmap)
+
+x=10:y=10
+dim map,x,y
+
+repeat x
+c=cnt
+repeat y
+if wpeek(charmap, (c + (cnt * 11)) * 2) == $c795 {
+map(c,cnt)=ASTAR_INFO_INPASSABLE
+} else {
+map(c,cnt)=ASTAR_INFO_PASSABLE
+}
+loop
+loop
+
+sdim out
+astar_search 0,0,9,9,map,out//map において、0,0 から 9,9 まで行く経路を調べて、out に入れる
+dialog stat
+dialog out
+end

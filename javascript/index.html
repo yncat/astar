@@ -1,0 +1,46 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+<meta charset="utf-8">
+<title>A-STAR TEST</title>
+<style type="text/css">
+html {
+	color: #000;
+	background-color: #FFF;
+}
+
+table {
+border-collapse: collapse;
+}
+td {
+padding: 0;
+margin: 0;
+}
+
+img {
+vertical-align: bottom;
+}
+
+</style>
+
+</head>
+<script src="maze.js"></script>
+<body>
+<h1>Maze</h1>
+<p>
+controls:<button type="button" onclick="btn_regenerate();" id="btn_regenerate" value="Regenerate maze">Regenerate maze</button> <button type="button" onclick="btn_search();" id="btn_search" value="Search for the shortest path">Search for the shortest path</button><br>
+<label>Maze generation factor:<input type="text" value="30" id="factor"></label>
+
+</p>
+
+<div id="map">
+</div>
+<h2>Tracing logs</h2>
+<p>
+<div id="trace">
+
+</div>
+</p>
+</body>
+</html>
